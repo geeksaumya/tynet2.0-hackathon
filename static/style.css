@@ -1,0 +1,160 @@
+body {
+    background: linear-gradient(135deg, #1e1e2f, #282a36);
+    color: #f8f8f2;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(40, 42, 54, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    animation: zoomIn 1s ease-in-out;
+}
+
+h1 {
+    font-size: 2.8em;
+    color: #ff79c6;
+    margin-bottom: 20px;
+    text-shadow: 0 3px 15px rgba(255, 121, 198, 0.7);
+}
+
+p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #bd93f9;
+}
+
+button{
+    background: #cea1df;
+    color: #252122;
+    border: none;
+    border-radius: 70px;
+    text-align: center;
+    height: 130px;
+    width: 180px;
+    padding: 12px 20px;
+    font-size: 4em;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+input[type="text"] {
+    background: #6272a4;
+    color: #f8f8f2;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+button:hover, input[type="text"]:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(98, 114, 164, 0.6);
+    outline: none;
+}
+
+input[type="text"] {
+    background: rgba(68, 71, 90, 0.8);
+    color: #f8f8f2;
+    padding: 12px;
+    width: calc(100% - 30px);
+    border: 2px solid transparent;
+}
+
+input[type="text"]:focus {
+    border: 2px solid #ff79c6;
+}
+
+a {
+    color: #50fa7b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffb86c;
+}
+
+.message {
+    margin: 20px 0;
+    font-size: 1em;
+    color: #8be9fd;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#alarm-button {
+    background: #af1e38;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    align-items: center;
+    color: #ffffff;
+    border-radius: 100%;
+    height: 100px;
+    width:100px;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+audio {
+    display: none;
+}
+
+.container form {
+    margin-top: 20px;
+}
+
+.container input[type="text"] {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.4em;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    button, input[type="text"] {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+
+    .message {
+        font-size: 0.9em;
+    }
+}
