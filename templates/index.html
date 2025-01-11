@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOSafe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>SOSafe</h1>
+
+        <p><strong>POLICE CONTACT: </strong> 7506777100 (SOS will be sent directly to police )</p>
+
+
+        <button id="alarm-button" onclick="playAlarm()">
+            <i class="fas fa-bell"></i> ALARM
+        </button>
+
+        <form method="POST" action="/send_sos">
+            <input type="text" name="name" placeholder="Your Name" value="{{ name }}" required>
+            <input type="text" name="emergency_contact" placeholder="Emergency Contact" value="{{ emergency_contact }}" required>
+            <button type="submit">
+                <i class="fas fa-paper-plane"></i> SOS
+            </button>
+        </form>
+
+        <div class="message">Emergency Contact: {{ emergency_contact }}</div>
+        <a href="{{ url_for('edit_contact') }}">Edit Emergency Contact</a>
+
+        <div class="message">Name: {{ name }}</div>
+        <a href="{{ url_for('edit_name') }}">Edit Name</a>
+
+
+        <audio id="alarm-audio" src="{{ url_for('static', filename='warning.mp3') }}" preload="auto"></audio>
+    </div>
+
+    <script>
+
+        function playAlarm() {
+            var alarmAudio = document.getElementById('alarm-audio');
+            alarmAudio.play();
+        }
+    </script>
+</body>
+</html>
